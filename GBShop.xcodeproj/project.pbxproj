@@ -97,12 +97,12 @@
 		92B7F5312853E46D00C6B4EE /* GBShop */ = {
 			isa = PBXGroup;
 			children = (
+				92B7F5622853E73A00C6B4EE /* Environments */,
 				92B7F5322853E46D00C6B4EE /* AppDelegate.swift */,
 				92B7F5342853E46D00C6B4EE /* SceneDelegate.swift */,
 				92B7F5362853E46D00C6B4EE /* ViewController.swift */,
 				92B7F53B2853E46E00C6B4EE /* Assets.xcassets */,
 				92B7F53D2853E46E00C6B4EE /* LaunchScreen.storyboard */,
-				92B7F5402853E46E00C6B4EE /* Info.plist */,
 			);
 			path = GBShop;
 			sourceTree = "<group>";
@@ -122,6 +122,14 @@
 				92B7F5552853E46E00C6B4EE /* GBShopUITestsLaunchTests.swift */,
 			);
 			path = GBShopUITests;
+			sourceTree = "<group>";
+		};
+		92B7F5622853E73A00C6B4EE /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				92B7F5402853E46E00C6B4EE /* Info.plist */,
+			);
+			path = Environments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +435,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FALWNHMM4Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GBShop/Info.plist;
+				INFOPLIST_FILE = GBShop/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -454,7 +462,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FALWNHMM4Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GBShop/Info.plist;
+				INFOPLIST_FILE = GBShop/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
