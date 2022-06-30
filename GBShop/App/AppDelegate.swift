@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let auth = requestFactory.makeAuthRequestFatory()
+        let logout = requestFactory.makeLogoutRequestFactory()
+        let registration = requestFactory.makeRegistartionRequestFactory()
+        let changeUserData = requestFactory.makeChangeInfoRequestFactory()
+        let allProducts = requestFactory.makeAllProductsRequestFactory()
+        let product = requestFactory.makeOneProductRequestFactory()
+
         auth.login(userName: "Somebody", password: "mypassword") {
             response in
             switch response.result {
@@ -25,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let logout = requestFactory.makeLogoutRequestFactory()
         logout.logout(idUser: 123) {
             response in
             switch response.result {
@@ -36,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let registration = requestFactory.makeRegistartionRequestFactory()
         registration.register(idUser: 123, username: "Somebody", password: "mypassword", email: "some@some.ru",
                               gender: "m", creditCard: "9872389-2424-234224-234",
                               bio: "This is good! I think I will switch to another language") {
@@ -49,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let changeUserData = requestFactory.makeChangeInfoRequestFactory()
         changeUserData.changeInfo(idUser: 123, username: "Somebody", password: "mypassword", email: "some@some.ru",
                               gender: "m", creditCard: "9872389-2424-234224-234",
                               bio: "This is good! I think I will switch to another language") {
@@ -61,6 +64,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
+
+        allProducts.getCatalog(pageNumber: 1, categoryId: 1) {
+            response in
+            switch response.result {
+            case .success(let rezult):
+                print(rezult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+
+        product.getProduct(idProduct: 123) {
+            response in
+            switch response.result {
+            case .success(let rezult):
+                print(rezult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
         return true
     }
 
