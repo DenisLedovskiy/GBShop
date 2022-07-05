@@ -21,6 +21,9 @@
 		92BCDEB6286E38ED009ED9EF /* ProductResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDEB5286E38ED009ED9EF /* ProductResult.swift */; };
 		92BCDEB8286E3A37009ED9EF /* ProductRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDEB7286E3A37009ED9EF /* ProductRequestFactory.swift */; };
 		92BCDEBA286E3A72009ED9EF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDEB9286E3A72009ED9EF /* Product.swift */; };
+		92BCDEBC287478EC009ED9EF /* ReviewResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDEBB287478EC009ED9EF /* ReviewResults.swift */; };
+		92BCDEBE28747941009ED9EF /* ReviewsRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDEBD28747941009ED9EF /* ReviewsRequestFactory.swift */; };
+		92BCDEC0287479E4009ED9EF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDEBF287479E4009ED9EF /* Review.swift */; };
 		92D073862855163600720C06 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D073852855163600720C06 /* AbstractErrorParser.swift */; };
 		92D0738828551A5000720C06 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0738728551A5000720C06 /* ErrorParser.swift */; };
 		92D0738B28552E1D00720C06 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92D0738A28552E1D00720C06 /* Alamofire */; };
@@ -79,6 +82,9 @@
 		92BCDEB5286E38ED009ED9EF /* ProductResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResult.swift; sourceTree = "<group>"; };
 		92BCDEB7286E3A37009ED9EF /* ProductRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequestFactory.swift; sourceTree = "<group>"; };
 		92BCDEB9286E3A72009ED9EF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		92BCDEBB287478EC009ED9EF /* ReviewResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResults.swift; sourceTree = "<group>"; };
+		92BCDEBD28747941009ED9EF /* ReviewsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestFactory.swift; sourceTree = "<group>"; };
+		92BCDEBF287479E4009ED9EF /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		92D073852855163600720C06 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		92D0738728551A5000720C06 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		92D0738C28552E7700720C06 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 				92D073A1285E5CFF00720C06 /* ChangeResult.swift */,
 				92BCDEAF286DFE18009ED9EF /* AllProductsResult.swift */,
 				92BCDEB5286E38ED009ED9EF /* ProductResult.swift */,
+				92BCDEBB287478EC009ED9EF /* ReviewResults.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -277,6 +284,8 @@
 				92BCDEB3286E2215009ED9EF /* AllProdacts.swift */,
 				92BCDEB7286E3A37009ED9EF /* ProductRequestFactory.swift */,
 				92BCDEB9286E3A72009ED9EF /* Product.swift */,
+				92BCDEBD28747941009ED9EF /* ReviewsRequestFactory.swift */,
+				92BCDEBF287479E4009ED9EF /* Review.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -417,12 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BCDEBE28747941009ED9EF /* ReviewsRequestFactory.swift in Sources */,
 				92BCDEB2286DFF82009ED9EF /* AllProductsRequestFactory.swift in Sources */,
 				92D0739A2856068A00720C06 /* RequestFactory.swift in Sources */,
 				92D073A6285E5FB100720C06 /* Logout.swift in Sources */,
 				92D0738828551A5000720C06 /* ErrorParser.swift in Sources */,
 				92BCDEB6286E38ED009ED9EF /* ProductResult.swift in Sources */,
 				92B7F5372853E46D00C6B4EE /* ViewController.swift in Sources */,
+				92BCDEBC287478EC009ED9EF /* ReviewResults.swift in Sources */,
 				92D073A4285E5DAE00720C06 /* LogoutRequestFactory.swift in Sources */,
 				92BCDEB4286E2215009ED9EF /* AllProdacts.swift in Sources */,
 				92D073A8285F479C00720C06 /* RegistrationRequestFactory.swift in Sources */,
@@ -440,6 +451,7 @@
 				92D073AC285F544E00720C06 /* ChangeInfoRequestFactory.swift in Sources */,
 				92D073932855347B00720C06 /* User.swift in Sources */,
 				92D0738D28552E7700720C06 /* DataRequest.swift in Sources */,
+				92BCDEC0287479E4009ED9EF /* Review.swift in Sources */,
 				92D073AF285F54E200720C06 /* ChangeInfo.swift in Sources */,
 				92B7F5352853E46D00C6B4EE /* SceneDelegate.swift in Sources */,
 				92D073A2285E5CFF00720C06 /* ChangeResult.swift in Sources */,

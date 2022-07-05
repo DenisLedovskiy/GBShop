@@ -24,6 +24,8 @@ class RequestsTests: XCTestCase {
     var pageNumber: Int!
     var categoryId: Int!
     var idProduct: Int!
+    var idComment: Int!
+    var text: String!
 
     let expectation = XCTestExpectation(description: "Request")
     let timeoutValu = 10.0
@@ -44,6 +46,8 @@ class RequestsTests: XCTestCase {
         pageNumber = 1
         categoryId = 1
         idProduct = 123
+        idComment = 12
+        text = "Отлично"
     }
 
     override func tearDownWithError() throws {
@@ -61,6 +65,8 @@ class RequestsTests: XCTestCase {
         pageNumber = nil
         categoryId = nil
         idProduct = nil
+        idComment = nil
+        text = nil
     }
 
     func testShouldPerformAuthRequest() {
@@ -142,6 +148,51 @@ class RequestsTests: XCTestCase {
     func testShouldPerformOneProductRequest() {
         let factory = requestFactory.makeOneProductRequestFactory()
         factory.getProduct(idProduct: idProduct) { [weak self] response in
+
+            switch response.result {
+            case .success(let result):
+                XCTAssertEqual(result.result, 1)
+            case .failure:
+                XCTFail()
+            }
+            self?.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: timeoutValu)
+    }
+
+    func testShouldPerformAllReviews() {
+        let factory = requestFactory.makeReviewsRequestFactory()
+        factory.getAllReviews(pageNumber: pageNumber, idProduct: idProduct) { [weak self] response in
+
+            switch response.result {
+            case .success(let result):
+                XCTAssertEqual(result.result, 1)
+            case .failure:
+                XCTFail()
+            }
+            self?.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: timeoutValu)
+    }
+
+    func testShouldAddReview() {
+        let factory = requestFactory.makeReviewsRequestFactory()
+        factory.addReview(idUser: id, text: text) { [weak self] response in
+
+            switch response.result {
+            case .success(let result):
+                XCTAssertEqual(result.result, 1)
+            case .failure:
+                XCTFail()
+            }
+            self?.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: timeoutValu)
+    }
+
+    func testShouldRemoveReview() {
+        let factory = requestFactory.makeReviewsRequestFactory()
+        factory.removeReview(idComment: idComment) { [weak self] response in
 
             switch response.result {
             case .success(let result):
