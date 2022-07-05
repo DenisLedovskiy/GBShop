@@ -13,7 +13,7 @@ class Product: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://secure-basin-15400.herokuapp.com/")!
 
     init (
         errorParser: AbstractErrorParser,
@@ -36,8 +36,8 @@ extension Product: ProductRequestFactory {
 extension Product {
     struct GetOneProduct: RequestRouter {
         var baseUrl: URL
-        var method: HTTPMethod = .get
-        var path: String = "getGoodById.json"
+        var method: HTTPMethod = .post
+        var path: String = "product"
         let idProduct: Int
 
         var parameters: Parameters? {

@@ -11,7 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let requestFactory = RequestFactory()
-// Нужен новый реквест
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let auth = requestFactory.makeAuthRequestFatory()
@@ -20,69 +20,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let changeUserData = requestFactory.makeChangeInfoRequestFactory()
         let allProducts = requestFactory.makeAllProductsRequestFactory()
         let product = requestFactory.makeOneProductRequestFactory()
+        let review = requestFactory.makeReviewsRequestFactory()
 
-        auth.login(userName: "Somebody", password: "mypassword") {
-            response in
-            switch response.result {
-            case .success(let login):
-                print(login)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        auth.login(userName: "Somebody", password: "mypassword") {
+//            response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//
+//        logout.logout(idUser: 123) {
+//            response in
+//            switch response.result {
+//            case .success(let exit):
+//                print(exit)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
 
-        logout.logout(idUser: 123) {
-            response in
-            switch response.result {
-            case .success(let exit):
-                print(exit)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//
+//        registration.register(idUser: 123, username: "Somebody", password: "mypassword", email: "some@some.ru",
+//                              gender: "m", creditCard: "9872389-2424-234224-234",
+//                              bio: "This is good! I think I will switch to another language") {
+//            response in
+//            switch response.result {
+//            case .success(let reg):
+//                print(reg)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//
+//        changeUserData.changeInfo(idUser: 123, username: "Somebody", password: "mypassword", email: "some@some.ru",
+//                              gender: "m", creditCard: "9872389-2424-234224-234",
+//                              bio: "This is good! I think I will switch to another language") {
+//            response in
+//            switch response.result {
+//            case .success(let change):
+//                print(change)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//
+//        allProducts.getCatalog(pageNumber: 1, categoryId: 1) {
+//            response in
+//            switch response.result {
+//            case .success(let rezult):
+//                print(rezult)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+////
+//
+//        product.getProduct(idProduct: 123) {
+//            response in
+//            switch response.result {
+//            case .success(let rezult):
+//                print(rezult)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
 
-        registration.register(idUser: 123, username: "Somebody", password: "mypassword", email: "some@some.ru",
-                              gender: "m", creditCard: "9872389-2424-234224-234",
-                              bio: "This is good! I think I will switch to another language") {
-            response in
-            switch response.result {
-            case .success(let reg):
-                print(reg)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-
-        changeUserData.changeInfo(idUser: 123, username: "Somebody", password: "mypassword", email: "some@some.ru",
-                              gender: "m", creditCard: "9872389-2424-234224-234",
-                              bio: "This is good! I think I will switch to another language") {
-            response in
-            switch response.result {
-            case .success(let change):
-                print(change)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-
-        allProducts.getCatalog(pageNumber: 1, categoryId: 1) {
+        review.getAllReviews(pageNumber: 1, idProduct: 123) {
             response in
             switch response.result {
             case .success(let rezult):
                 print(rezult)
             case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-
-
-        product.getProduct(idProduct: 123) {
-            response in
-            switch response.result {
-            case .success(let rezult):
-                print(rezult)
-            case .failure(let error):
-                print(error.localizedDescription)
+                print(error)
             }
         }
 
